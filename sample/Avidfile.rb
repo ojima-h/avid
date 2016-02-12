@@ -31,3 +31,12 @@ play :failure do
   end
 end
 
+desc 'waiter smaple'
+play :waiter_sample, extends: 'core:waiter' do
+  interval 1
+
+  def wait_until(elapsed)
+    p elapsed
+    elapsed > 5
+  end
+end
